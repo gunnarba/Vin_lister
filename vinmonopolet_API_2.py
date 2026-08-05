@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup
 import html
 import time
 
-INPUT_FILE = "vinliste1_input.csv"
-OUTPUT_FILE = "vinliste1_poeng.csv"
+INPUT_FILE = "300_pluss_roa.csv"
+OUTPUT_FILE = "300_pluss_roa_poeng.csv"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (VinlisteBot/1.0)"
