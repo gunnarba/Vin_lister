@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 import html
 import time
 
-INPUT_FILE = "300_pluss_roa.csv"
-OUTPUT_FILE = "300_pluss_roa_poeng.csv"
+INPUT_FILE = "input_300_pluss_roa.csv"
+OUTPUT_FILE = "poeng_300_pluss_roa.csv"
 
 HEADERS = {
     "User-Agent": (
