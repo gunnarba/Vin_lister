@@ -1,7 +1,7 @@
 import csv
 
-INPUT_FILE = "vinliste1_poeng.csv"
-OUTPUT_FILE = "vinliste1_sortert.csv"
+INPUT_FILE = "300_pluss_roa_poeng.csv"
+OUTPUT_FILE = "300_pluss_roa_sortert.csv"
 
 def to_float(value):
     try:
