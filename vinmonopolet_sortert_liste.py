@@ -1,8 +1,8 @@
 import csv
 import os
 
-INPUT_FILE = "300_pluss_roa_poeng.csv"
-OUTPUT_FILE = "300_pluss_roa_sortert.csv"
+INPUT_FILE = os.path.join("data_input", "output", "300_pluss_roa_poeng.csv")
+OUTPUT_FILE = os.path.join("data_input", "output", "300_pluss_roa_sortert.csv")
 
 
 def to_float(value):
@@ -13,8 +13,11 @@ def to_float(value):
 
 
 def main():
+    print("Working directory:", os.getcwd())
+    print("Input:", os.path.abspath(INPUT_FILE))
+
     if not os.path.exists(INPUT_FILE):
-        print(f"ERROR: '{INPUT_FILE}' finnes ikke i {os.getcwd()}. "
+        print(f"ERROR: '{INPUT_FILE}' finnes ikke. "
               f"Kjør hent_poeng_vinliste.py først.")
         return
 
@@ -41,6 +44,8 @@ def main():
             -(r["poengsum"] or 0)
         )
     )
+
+    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 
     with open(OUTPUT_FILE, "w", newline="", encoding="utf-8") as outfile:
         writer = csv.DictWriter(outfile, fieldnames=fieldnames, delimiter=";")

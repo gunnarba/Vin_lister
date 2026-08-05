@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 import html
 import time
 
-INPUT_FILE = "input_300_pluss_roa.csv"
-OUTPUT_FILE = "poeng_300_pluss_roa.csv"
+INPUT_FILE = os.path.join("data_input", "input", "input_300_pluss_roa.csv")
+OUTPUT_FILE = os.path.join("data_input", "output", "300_pluss_roa_poeng.csv")
 
 HEADERS = {
     "User-Agent": (
@@ -50,12 +50,15 @@ def fetch_score(varenummer, session):
 
 def main():
     print("Working directory:", os.getcwd())
+    print("Input:", os.path.abspath(INPUT_FILE))
     print("Input exists:", os.path.exists(INPUT_FILE))
 
     if not os.path.exists(INPUT_FILE):
-        print(f"ERROR: '{INPUT_FILE}' not found i {os.getcwd()}. "
-              f"Sjekk filsti og prøv igjen.")
+        print(f"ERROR: '{INPUT_FILE}' finnes ikke. "
+              f"Sjekk at du kjører fra repo-roten, og at filen ligger i data_input/input/.")
         return
+
+    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 
     session = requests.Session()
 
