@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 import html
 import time
 
-INPUT_FILE = os.path.join("data_input", "input", "input_300_pluss_roa.csv")
-OUTPUT_FILE = os.path.join("data_input", "output", "300_pluss_roa_poeng.csv")
+INPUT_FILE = os.path.join("data_inn_ut", "input", "input_300_pluss_roa.csv")
+OUTPUT_FILE = os.path.join("data_inn_ut", "output", "300_pluss_roa_poeng.csv")
 
 HEADERS = {
     "User-Agent": (
