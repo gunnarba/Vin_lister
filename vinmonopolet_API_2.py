@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup
 import html
 import time
 
+from vinmonopolet_API import varenummer
+
 INPUT_FILE = "300_pluss_roa.csv"
 OUTPUT_FILE = "300_pluss_roa_poeng.csv"
 
@@ -47,7 +49,7 @@ with open(INPUT_FILE, encoding="cp1252") as infile, \
     fieldnames = ["varenummer", "navn", "pris", "poengsum", "poeng_per_pris"]
     writer = csv.DictWriter(outfile, fieldnames=fieldnames, delimiter=";")
     writer.writeheader()
-
+    print(varenummer)
     for row in reader:
         varenummer = row["varenummer"]
         navn = html.unescape(row["navn"])
