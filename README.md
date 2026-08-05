@@ -51,7 +51,7 @@ Semikolon-separert, UTF-8, med kolonnene:
 2. Kjør scriptet:
 
 ```
-python hent_poeng.py
+hent_poeng_vinliste.py
 ```
 
 3. Følg med i konsollen — scriptet skriver ut fremdrift per vin, f.eks.:
